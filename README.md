@@ -1,7 +1,3 @@
-# thousandeyes-ansible-rulebooks
+# Ansible Collection - thousandeyes.rulebooks
 
-## Owners: hashlock
-
-## Description
-
-Examples of Event-Driven Ansible rulebooks that can be triggered by ThousandEyes webhook alert notifications. 
+For detailed documentation, please see the [Event-Driven Ansible for Alert Notifications](https://docs.thousandeyes.com/product-documentation/integration-guides/custom-webhook-examples/event-driven-ansible-for-alert-notifs) article in the ThousandEyes documentation. 

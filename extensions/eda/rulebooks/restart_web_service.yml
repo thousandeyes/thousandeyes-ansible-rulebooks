@@ -1,0 +1,27 @@
+---
+- name: ThousandEyes Webhook
+  hosts: all
+  sources:
+   - ansible.eda.webhook:
+       host: 0.0.0.0
+       port: 1235
+
+  rules:
+    - name: Restart Web Service
+      condition: event.payload.alert.rule.expression is match("Response Code is server error (5xx)", ignorecase=true) and event.payload.type == 2
+      action:
+        run_playbook:
+          name: ./restart_web_service.yml
+          post_events: true
+
+    - name: Restart service playbook success
+      condition: event.restart_web_service is defined and event.restart_web_service.rc == 0
+      actions:
+        - debug:
+            msg: "Restarting web service succeeded!"
+
+    - name: Restart service playbook failure
+      condition: event.restart_web_service is defined and event.restart_web_service.rc != 0
+      actions:
+        - debug:
+            msg: "Restarting web service failed!"
