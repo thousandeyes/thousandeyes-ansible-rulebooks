@@ -1,5 +1,7 @@
 # Ansible Collection - thousandeyes.rulebooks
 
+ [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/9367/badge)](https://www.bestpractices.dev/projects/9367)
+
 This collection contains example rulebooks for using ThousandEyes webhook alert notifications with 
 Event-Driven Ansible. 
 
